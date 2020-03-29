@@ -13,6 +13,12 @@ class Facebook extends Component {
 
   }
   hoverOff=()=>{
+    
+    document.getElementById("react-Div").style.display="none"
+
+  }
+  click=()=>{
+    
     document.getElementById("react-Div").style.display="none"
 
   }
@@ -63,18 +69,20 @@ class Facebook extends Component {
           />
         </div>
         <div style={{display:"flex", justifyContent:'space-around'}}> 
-        <div  id="react-Div" className="react" style={{display:"none"}}>
-        <FacebookEmoji type="like"/>
-        <FacebookEmoji type="love"/>
-        <FacebookEmoji type="wow"/>
-        <FacebookEmoji type="yay"/>
-        <FacebookEmoji type="angry"/>
-        <FacebookEmoji type="haha"/>
-        <FacebookEmoji type="sad"/>
+        <div  id="react-Div" className="react" style={{display:"none" ,position:"relative",top:'36rem',right:'46rem'}}>
+       <a href=''>
+        <FacebookEmoji onclick={this.click} size="sm" type="like"/>
+        <FacebookEmoji size="sm" type="love"/>
+        <FacebookEmoji size="sm" type="wow"/>
+        <FacebookEmoji size="sm" type="yay"/>
+        <FacebookEmoji size="sm" type="angry"/>
+        <FacebookEmoji size="sm" type="haha"/>
+        <FacebookEmoji size="sm" type="sad"/>
+        </a>
     </div>
         <a style={{textDecoration:"none",color:'black'}} href="">
           <img  src={Like} height="30px" width="30px"/>
-          <p onMouseOver={this.hover} onMouseOut={this.hoverOff} className="like" style={{display:"inline" ,position:"relative",top:'2px' ,}}>Like</p>
+          <p onMouseOver={this.hover}   className="like" style={{display:"inline" ,position:"relative",top:'2px' ,}}>Like</p>
           </a>
           <a style={{textDecoration:"none",color:'black'}} href="">
           <img src={Comment} height="30px" width="30px"/>
