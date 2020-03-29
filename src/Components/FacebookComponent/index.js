@@ -7,7 +7,7 @@ import Share from "../../Images/share.png";
 import "../../App.css";
 import { FiMessageSquare } from "react-icons/fi";
 import { FaShare } from "react-icons/fa";
-
+import Unlike from '../../Images/Unlike-icon.png'
 class Facebook extends Component {
   state={
     like:this.props.like,
@@ -118,7 +118,7 @@ like=()=>{
               right: "48rem"
             }}
           >
-            <FacebookEmoji onclick={this.click} size="sm" type="like" />
+            <FacebookEmoji size="sm"  type="like" />
             <FacebookEmoji size="sm" type="love" />
             <FacebookEmoji size="sm" type="wow" />
             <FacebookEmoji size="sm" type="angry" />
@@ -130,16 +130,26 @@ like=()=>{
 
             {this.state.like.map(item=>{
               return <div style={{display:'inline',position:'absolute', top:'36rem'}}>
-                <a>{item} like your photo</a>
+                <a >
+                  
+                <FacebookEmoji  size="xs" type="like" />
+                  
+                  {item}
+                </a>
               </div>
             
                 
             })}
-          </div>:<p style={{marginBottom:'3px'}}>no like</p>
+          </div>:<p style={{display:'none'}}></p>
           
         }
+          
+        {this.state.likeBtn?<div>
+          <FacebookEmoji  size="xs" type="like" />
+         
 
-          <button onClick={this.like}  style={{outline:'none', backgroundColor:'white',borderStyle:'none'  }} href="">
+        </div>:<div>
+        <button onClick={this.like}  style={{outline:'none', backgroundColor:'white',borderStyle:'none'  }} href="">
             <img src={Like} height="30px" width="30px" />
             <p
               onMouseOver={this.hover}
@@ -149,6 +159,15 @@ like=()=>{
               Like
             </p>
           </button>
+        </div>
+
+
+        
+      }
+
+
+
+          
           <a style={{ textDecoration: "none", color: "black" }} href="">
             {/* <img src={Comment} height="30px" width="30px"/> */}
             <FiMessageSquare />

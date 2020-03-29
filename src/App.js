@@ -13,7 +13,7 @@ render(){
   const img="img.jpg"
   const createAt=moment().calendar();  
   this.state={
-    like:["arif"]
+    like:[" Muhammad aarif ahmad"]
   }             
   return(
     <div>
