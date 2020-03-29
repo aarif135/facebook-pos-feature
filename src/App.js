@@ -11,7 +11,10 @@ import * as moment from 'moment'
 class App extends Component{
 render(){
   const img="img.jpg"
-  const createAt=moment().calendar();               
+  const createAt=moment().calendar();  
+  this.state={
+    like:["arif"]
+  }             
   return(
     <div>
       <Facebook  description={
@@ -20,6 +23,7 @@ render(){
         img1={[img1,img2,img3,img4,img5]}
         profileLink={"https://www.facebook.com/arif.ahmad.1466126"}
         createAt={createAt}
+        like={this.state.like}
       />
 
     
