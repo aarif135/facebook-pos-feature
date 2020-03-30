@@ -118,7 +118,7 @@ class Facebook extends Component {
                 right: "48rem"
               }}
             >
-              <FacebookEmoji size="sm" type="like" />
+          <button onClick={this.like} style={{border:'none',backgroundColor:'white'}}>    <FacebookEmoji size="sm" type="like" /></button>
               <FacebookEmoji size="sm" type="love" />
               <FacebookEmoji size="sm" type="wow" />
               <FacebookEmoji size="sm" type="angry" />
